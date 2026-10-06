@@ -1,0 +1,41 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{utf8}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\definecolor{nasablue}{RGB}{11, 61, 145}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nasablue,
+    urlcolor=nasablue
+}
+
+\title{\textbf{\LARGE AstraFlame: AI-Powered Microgravity Combustion Intelligence \& Spacecraft Fire Safety Dashboard}}
+\author{\textbf{NASA Space Apps Challenge 2026 Submission}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Fire behavior in microgravity fundamentally defies terrestrial combustion intuition. In the absence of natural buoyant convection, flames transition from upward teardrop structures into spherical, diffusion-dominated regimes where airflow velocity, ambient oxygen concentration ($\mathrm{O_2\%}$), and structural material properties dictate extinction and spread. To address the NASA Space Apps Challenge (\textit{Flame in Freefall: AI-Powered Fire Safety Insights from Microgravity Combustion Data}), we present \textbf{AstraFlame}, an interactive, scientifically defensible web dashboard that summarizes, ranks, interprets, and visualizes microgravity fire dynamics to optimize fire safety protocols for human spaceflight.
+
+AstraFlame integrates empirical data across five core NASA Physical Science Informatics (PSI) repositories: \textbf{FLEX} (droplet flammability/extinction), \textbf{BASS-II} (solid material flame spread), \textbf{SAFFIRE-I} (large-scale spacecraft burns), \textbf{SAME} (smoke aerosol generation), and \textbf{SPICE} (soot formation and flame length). The backend features a hybrid machine-learning and physics router. Machine learning models (XGBoost/Random Forest) trained on high-density datasets ($\text{FLEX}, N=274$) predict liquid fire extinction probabilities ($P(\text{extinction})$) and burn rates, while analytical physics correlations process solid fuel spread dynamics ($\text{BASS-II}, N=129$) and flame geometry ($\text{SPICE}, N=469$). Sparse flight datasets like SAFFIRE-I ($N=4$) and SAME ($N=8$) serve as ground-truth real-scale benchmarks to prevent model hallucination.
+
+To ensure complete transparency, predictions are paired with \textbf{SHAP (SHapley Additive exPlanations)} feature attribution to quantify environmental drivers (e.g., $\mathrm{O_2\%}$ vs. airflow velocity), along with explicit domain validity checks that suppress predictions when inputs exceed NASA experiment boundaries. The frontend dashboard delivers:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Interactive HTML5 Canvas Engine:} Animates spherical microgravity flames, blackbody radiation color shifts, and airflow wake stretch in real time.
+    \item \textbf{Traceable Material Flammability Risk Scoreboard:} Ranks materials (e.g., PMMA, Nomex, Silicone) based on flame spread velocity and minimum extinction oxygen thresholds, linked directly to NASA PSI Investigation IDs.
+    \item \textbf{What-If Ventilation Shutdown Simulator:} Demonstrates forced-airflow reduction ($0\text{ cm/s}$) to model passive flame quenching and optimize spacecraft ventilation emergency protocols.
+    \item \textbf{IoT Sensor Integration:} Accepts live telemetry from an ESP32 microcontroller stream ($\mathrm{O_2}$, pressure, temperature) to evaluate real-time spacecraft cabin flammability risks.
+\end{enumerate}
+
+By uniting empirical NASA dataset provenance, calibrated machine learning, and real-time visualization, AstraFlame converts complex microgravity physics into actionable, life-saving decision support for mission control and spacecraft design engineers.
+\end{abstract}
+
+\end{document}
