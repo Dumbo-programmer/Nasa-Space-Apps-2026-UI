@@ -1,0 +1,15 @@
+
+> agnishikha@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.104:3000
+✓ Ready in 9.8s
+✓ Running next.config.ts took 726ms
+⚠ Slow filesystem detected. The benchmark took 318ms. If \\?\B:\Development\Nasa Space Apps 2026\agnishikha-ui\.next\dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+
+○ Compiling / ...
+ GET / 200 in 8.6s (next.js: 8.4s, application-code: 203ms)
+ GET / 200 in 65ms (next.js: 10ms, application-code: 55ms)
